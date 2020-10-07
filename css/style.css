@@ -1,0 +1,170 @@
+@font-face {
+    font-family: Helvetica LT;
+    src: url(../assets/fonts/HelveticaLTStdLight.otf);
+}
+@font-face {
+    font-family: Helvetica LT Std;
+    src: url(../assets/fonts/HelveticaLTStdBold.otf);
+}
+html{
+    font-size:10px;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    position: relative;
+}
+.header{
+   position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.header:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 9rem;
+    background: red;
+    z-index: 10;
+}
+.header-wrapper{
+    display: flex;
+    position: relative;
+    align-items: center;
+    max-width: 102rem;
+    height: 9rem;
+    margin:0 auto;
+    background: silver;
+}
+.menu{
+    align-self: flex-end;
+    position: relative;
+    width: 100%;
+    background: aqua;
+    z-index: 11;
+}
+.menu li{
+    list-style: none;
+}
+.menu-list>li{
+    box-sizing: border-box;
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    font-family: Helvetica LT Std,sans-serif;
+    padding: 1rem 0;
+}
+.menu a {
+    text-decoration: none;
+    color: #000;
+}
+.menu-list{
+    display: flex;
+}
+.submenu-block{
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 4.4rem;
+    font-size: 1.6rem;
+    font-family: Helvetica LT Std,sans-serif;
+    background: slategrey;
+    width: 100%;
+    min-height: 50vh;
+}
+.submenu-list{
+    display: flex;
+    margin-left: 1rem;
+}
+.submenu-list li{
+    padding: 0.5rem 0;
+}
+.submenu-list>li:not(:first-child){
+    margin-left: 3.5rem;
+}
+body.mouse .menu-list>li:hover:before{
+    content: '';
+    position: absolute;
+    bottom: -0.2rem;
+    width: 9.5rem;
+    border-bottom: 0.2rem solid orange;
+}
+body.mouse .menu-list li:hover .submenu-block{
+    display: flex;
+    overflow: hidden;
+}
+.sub-submenu-list{
+    font-size: 1.2rem;
+    font-family: Helvetica LT,sans-serif;
+}
+/*humburger style*/
+
+.hamburger {
+    position: relative;
+    display: none;
+    width: 2.5rem;
+    height: 2rem;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.hamburger span {
+    position: absolute;
+    display: inline-block;
+    width: 3rem;
+    height: 0.34rem;
+    background: #adb5bd;
+    border-radius: 0.5rem;
+    top: calc(50% - 0.12rem);
+    transition: all 0.3s ease 0s;
+}
+
+.hamburger::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 3rem;
+    height: 0.34rem;
+    top: 0;
+    background: #adb5bd;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease 0s;
+}
+
+.hamburger::after {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 3rem;
+    height: 0.34rem;
+    bottom: 0;
+    background: #adb5bd;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease 0s;
+}
+
+.hamburger.active-burger::before {
+    transform: rotate(45deg);
+    top: 0.9rem;
+}
+
+.hamburger.active-burger::after {
+    transform: rotate(-45deg);
+    bottom: 0.9rem;
+}
+
+.hamburger.active-burger span {
+    transform: scale(0);
+}
+.content-wrapper{
+    max-width: 102rem;
+    margin: 9rem auto 0;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    font-family: Helvetica LT Std,sans-serif;
+    padding: 3rem 0;
+}
